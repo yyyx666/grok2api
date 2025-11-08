@@ -342,7 +342,8 @@ class RedisStorage(BaseStorage):
             self._redis = redis.Redis(
                 host=parsed['host'], port=parsed['port'], password=parsed.get('password'),
                 username=parsed.get('username'), db=parsed.get('db', 0),
-                encoding="utf-8", decode_responses=True
+                encoding="utf-8", decode_responses=True,
+                ssl=True
             )
 
             # 测试连接
